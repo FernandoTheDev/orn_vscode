@@ -1,0 +1,38 @@
+{
+  "name": "orn-language",
+  "displayName": "Orn Programming Language",
+  "repository": {"url": "https://github.com/FernandoTheDev/orn_vscode"},
+  "description": "The Orn Programming Language",
+  "version": "0.0.3",
+  "publisher": "FarpyOrganization",
+  "icon": "./imagens/orn.png",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "orn-language",
+      "aliases": ["orn-language"],
+      "extensions": [".orn"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./imagens/orn.png",
+        "dark": "./imagens/orn.png"
+      }
+    }],
+    "grammars": [{
+      "language": "orn-language",
+      "scopeName": "source.orn",
+      "path": "./syntaxes/orn-language.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "orn-language",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}

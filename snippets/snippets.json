@@ -1,0 +1,177 @@
+{
+    "Main Function": {
+        "prefix": "main",
+        "body": [
+            "int main() {",
+            "\t$0",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "Creates the main entry point function"
+    },
+    "Import Module": {
+        "prefix": "imp",
+        "body": [
+            "import ${1:std.libc.io}"
+        ],
+        "description": "Imports a full module"
+    },
+    "Import Selective": {
+        "prefix": "impf",
+        "body": [
+            "import { ${2:printf} } from ${1:std.libc.io}"
+        ],
+        "description": "Imports specific symbols from a module"
+    },
+    "Function Definition": {
+        "prefix": "fn",
+        "body": [
+            "fn ${1:function_name}(${2:params}) -> ${1:void} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Defines a new function"
+    },
+    "Struct Definition": {
+        "prefix": "struct",
+        "body": [
+            "struct ${1:Name} {",
+            "\t${2:member}: ${2:type}",
+            "}"
+        ],
+        "description": "Defines a new data structure"
+    },
+    "Enum Definition": {
+        "prefix": "enum",
+        "body": [
+            "enum ${1:Name} {",
+            "\t${2:OPTION_A},",
+            "\t${3:OPTION_B}",
+            "}"
+        ],
+        "description": "Defines an enumeration"
+    },
+    "Variable Declaration": {
+        "prefix": "let",
+        "body": [
+            "let ${1:name}: ${2:type} = ${3:value};"
+        ],
+        "description": "Declares an initialized variable"
+    },
+    "Const Declaration": {
+        "prefix": "const",
+        "body": [
+            "const ${1:name}: ${2:type} = ${3:value};"
+        ],
+        "description": "Declares an initialized variable"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if ${1:condition} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "If conditional block"
+    },
+    "If Else Statement": {
+        "prefix": "ife",
+        "body": [
+            "if ${1:condition} {",
+            "\t${2}",
+            "} else {",
+            "\t$0",
+            "}"
+        ],
+        "description": "If-else conditional block"
+    },
+    "Else If Statement": {
+        "prefix": "elif",
+        "body": [
+            "else if ${1:condition} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Else if block"
+    },
+    "For Loop": {
+        "prefix": "for",
+        "body": [
+            "for let ${1:i}: int = 0; ${1:i} < ${2:count}; ${1:i}++ {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Standard C-style for loop"
+    },
+    "While Loop": {
+        "prefix": "while",
+        "body": [
+            "while ${1:condition} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "While loop"
+    },
+    "Do While Loop": {
+        "prefix": "dowhile",
+        "body": [
+            "do {",
+            "\t$0",
+            "} while (${1:condition});"
+        ],
+        "description": "Do-While loop"
+    },
+    "Printf": {
+        "prefix": "pr",
+        "body": [
+            "printf(\"${1:%d}\\n\", ${2:value});"
+        ],
+        "description": "Prints formatted output to stdout"
+    },
+    "Safe Allocation (Malloc)": {
+        "prefix": "malloc",
+        "body": [
+            "${1:Type}* ${2:ptr} = (${1:Type}*) malloc(sizeof ${1:Type});",
+            "if ${2:ptr} == null { return -1; }",
+            "$0",
+            "free(${2:ptr});"
+        ],
+        "description": "Allocates memory with error checking and cleanup pattern"
+    },
+    "Safe Array Allocation (Calloc)": {
+        "prefix": "calloc",
+        "body": [
+            "${1:Type}* ${2:arr} = (${1:Type}*) calloc(${3:count}, sizeof ${1:Type});",
+            "$0",
+            "free(${2:arr});"
+        ],
+        "description": "Allocates zero-initialized array memory"
+    },
+    "Pointer Cast": {
+        "prefix": "cast",
+        "body": [
+            "${1:variable} as (${2:Type*}) "
+        ],
+        "description": "Casts a pointer to another type"
+    },
+    "Return": {
+        "prefix": "ret",
+        "body": [
+            "return ${1:0};"
+        ],
+        "description": "Return statement"
+    },
+    "File Header": {
+        "prefix": "header",
+        "body": [
+            "// Project: ${1:orn Project}",
+            "// Author: ${2:User}",
+            "// Description: ${3:Module description}",
+            "",
+            "import std.libc.io",
+            "",
+            "$0"
+        ],
+        "description": "Standard file header with imports"
+    }
+}
