@@ -35,7 +35,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.orn-language",
-				"match": "\\b(import|for|while|do|return|if|else|sizeof|struct|int|i32|long|i64|float|f32|double|f64|i1|u1|bool|char|string|void|uint|ulong|short|ushort|u8|i8|u32|u64|byte|ubyte|i16|u16|break|continue|enum|fn|let|const|from|union|defer)\\b"
+				"match": "\\b(import|for|while|do|return|if|else|sizeof|struct|int|i32|long|i64|float|f32|double|f64|i1|u1|bool|char|string|void|uint|ulong|short|ushort|u8|i8|u32|u64|byte|ubyte|i16|u16|break|continue|enum|fn|let|const|from|union|defer|as)\\b"
 			}]
 		},
 		"constants": {
